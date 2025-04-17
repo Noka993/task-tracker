@@ -1,14 +1,14 @@
 def add_task(content):
-    pass
+    return True
 
 def delete_task(id):
-    pass
+    return True
 
 def update_task(id, content):
-    pass
+    return True
 
 def mark_task(id):
-    pass
+    return True
 
 def list_tasks(id=None):
-    pass
+    return True

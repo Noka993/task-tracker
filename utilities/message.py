@@ -7,5 +7,5 @@ def print_additional_args_msg(cmd, *argv):
     """
     print(f"You need to provide additional argument(s) to {cmd} a task!")
     args = ' '.join([ f"[{arg}]" for arg in argv])
-    print(f"Usage: task-cli {args}")
+    print(f"Usage: task-cli {cmd} {args}")
     return
