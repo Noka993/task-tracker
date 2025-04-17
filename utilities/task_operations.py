@@ -1,14 +1,14 @@
-def add_task():
+def add_task(content):
     pass
 
-def delete_task():
+def delete_task(id):
     pass
 
-def update_task():
+def update_task(id, content):
     pass
 
-def mark_task():
+def mark_task(id):
     pass
 
-def list_tasks():
+def list_tasks(id=None):
     pass
