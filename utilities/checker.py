@@ -64,13 +64,13 @@ command_map = {
 
 
 def checker(args):
-    if len(args) <= 1:
+    if not args or len(args) <= 1:
         print("You need to provide a command to run!")
         return False
     if args[0] != "task-cli":
         print("Invalid argument: ", args[0])
         return False
-    if len(args) > 4:
+    if len(args) > 5:
         print("Too many arguments provided!")
         return False
 

@@ -25,46 +25,65 @@ def test_too_many_args():
 def test_correct_add_input():
     args = 'task-cli add "blblabla blablabla"'.split(" ")
     assert checker.checker(args)
-    
-    
+
+
+def test_incorrect_number_of_args_add():
+    args = "task-cli add".split(" ")
+    assert not checker.checker(args)
+
+
 def test_correct_update_input():
     args = 'task-cli update 1 "blblabla blablabla"'.split(" ")
     assert checker.checker(args)
-    
-    
+
+
 def test_correct_delete_input():
     args = 'task-cli add "blblabla blablabla"'.split(" ")
     assert checker.checker(args)
-    
-    
+
+
+def test_non_numeric_id_delete():
+    args = "task-cli delete eweqeqewq".split(" ")
+    assert not checker.checker(args)
+
+
+def test_incorrect_number_of_args_delete():
+    args = "task-cli delete".split(" ")
+    assert not checker.checker(args)
+
+
 def test_correct_list_inputs():
-    args0 = 'task-cli list'.split(" ")
-    args1 = args0.append("1")
+    args0 = "task-cli list".split(" ")
+    args1 = args0.copy()
+    args1.append("1")
     assert checker.checker(args0) and checker.checker(args1)
-    
+
 
 def test_correct_mark_progress_input():
-    args0 = 'task-cli mark-in-progress 1'.split(" ")
+    args0 = "task-cli mark-in-progress 1".split(" ")
     assert checker.checker(args0)
+
+
+def test_non_numeric_id_mark_progress():
+    args = "task-cli mark-in-progress eweqeqewq".split(" ")
+    assert not checker.checker(args)
+
+
+def test_incorrect_number_of_args_mark_progress():
+    args = "task-cli mark-in-progress".split(" ")
+    assert not checker.checker(args)
 
 
 def test_correct_mark_done_input():
-    args0 = 'task-cli mark-done 1'.split(" ")
+    args0 = "task-cli mark-done 1".split(" ")
     assert checker.checker(args0)
-    
-    
-# def test_whitespaces_input(correct_value):
-#     value_arr = correct_value.split()
-#     correct_value += "              "
-#     correct_value = "               " + correct_value
-#     output = split.split_string(correct_value)
-#     assert output == value_arr
-
-# def test_correct_input_with_quotes(correct_quotes):
-#     output = split.split_string(correct_quotes)
-#     assert len(output) == 2
 
 
-# def test_invalid_input_with_quotes(incorrect_quotes):
-#     output = split.split_string(incorrect_quotes)
-#     assert not output
+def test_non_numeric_id_mark_done():
+    args = "task-cli mark-done eweqeqewq".split(" ")
+    assert not checker.checker(args)
+
+
+def test_incorrect_number_of_args_mark_done():
+    args = "task-cli mark-done".split(" ")
+    assert not checker.checker(args)
