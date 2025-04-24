@@ -87,3 +87,23 @@ def test_non_numeric_id_mark_done():
 def test_incorrect_number_of_args_mark_done():
     args = "task-cli mark-done".split(" ")
     assert not checker.checker(args)
+
+
+def test_correct_delete():
+    assert checker.checker("task-cli delete 1".split(" "))
+    
+
+def test_invalid_number_of_args_update():
+    assert not checker.checker("task-cli update 1".split(" "))
+
+
+def test_non_numeric_id_update():
+    assert not checker.checker("task-cli update eweqeqewq".split(" "))
+    
+
+def test_zero_args_checker():
+    assert not checker.checker([])
+
+
+def test_too_many_args_checker():
+    assert not checker.checker([1, 2, 3, 4, 5, 6])

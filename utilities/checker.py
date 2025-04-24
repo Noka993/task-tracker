@@ -64,6 +64,12 @@ command_map = {
 
 
 def checker(args):
+    """
+    Checks the validity of the arguments and runs the correct handler function if the input is valid.
+
+    :param args: list of arguments
+    :return: True if the command is valid and the operation is successful, False otherwise
+    """
     if not args or len(args) <= 1:
         print("You need to provide a command to run!")
         return False
