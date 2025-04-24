@@ -19,6 +19,7 @@ def find_task(id, tasks):
 
 
 def change_task(id, operation, tasks, content=None, status=None, test=False):
+    id = int(id)
     for task in tasks:
         if task.get("id") == id:
             if operation == "update":

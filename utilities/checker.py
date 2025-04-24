@@ -40,7 +40,7 @@ def mark_progress_handler(args):
     if not args[1].isnumeric():
         print("You need to provide a valid task id!")
         return False
-    return to.delete_task(args[1])
+    return to.mark_task(args[1], "in-progress")
 
 
 def mark_done_handler(args):
@@ -50,7 +50,7 @@ def mark_done_handler(args):
     if not args[1].isnumeric():
         print("You need to provide a valid task id!")
         return False
-    return to.delete_task(args[1])
+    return to.mark_task(args[1], "done")
 
 
 command_map = {

@@ -1,5 +1,6 @@
 from utilities.split import split_string
 from utilities.checker import checker
+from utilities.task_operations import update_task
 
 
 def run_loop():
